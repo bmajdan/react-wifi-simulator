@@ -1,13 +1,15 @@
 {
-  "name": "unifi",
+  "name": "simple_wifi-simulator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple Wi-Fi coverage simulator",
   "main": "index.js",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bartosz Majdan",
   "license": "ISC",
   "dependencies": {
     "@zeit/next-css": "^0.2.0",
