@@ -1,0 +1,1 @@
+# Simple Wi-Fi coverage simulator
