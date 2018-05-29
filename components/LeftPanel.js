@@ -1,10 +1,12 @@
 import AccesPoint from './AccesPoint';
 import Dots from './Dots';
+import Scale from './Scale';
+import { WSAECANCELLED } from 'constants';
 
 class LeftPanel extends React.Component {
 
     constructor(props){
-        super(props)
+        super(props);
         this.state ={
             panel_w: undefined,
             panel_h: undefined,
@@ -14,41 +16,41 @@ class LeftPanel extends React.Component {
             clicked_x: undefined,
             clicked_y: undefined,
             radius: this.props.distance,
-            access_size: 50,
+            access_size: 100,
             dot_size: 10,
             client_dots: []
-        }
+        };
     }
 
     componentWillReceiveProps(newProps, oldProps){
         if(newProps != oldProps){
-            console.log(newProps.distance)
+            console.log(newProps.distance);
             this.setState({
                 radius: newProps.distance
-            })
+            });
         }
     }
 
     componentDidMount(){
         this.setState({
-            panel_w: window.innerWidth - 350,
+            panel_w: window.innerWidth - 300,
             panel_h: window.innerHeight,
-            access_x: (window.innerWidth - 350) / 2 - (this.state.access_size / 2),
+            access_x: (window.innerWidth - 300) / 2 - (this.state.access_size / 2),
             access_y: window.innerHeight / 2 - (this.state.access_size / 2)
         }, () => {
-            let buffArr = []
+            let buffArr = [];
             
             for(let i = 0; i < 10; i++){
                 buffArr.push({
                     x: Math.floor(Math.random() * (this.state.panel_w - 20) + 10),
                     y: Math.floor(Math.random() * (this.state.panel_h - 20) + 10)
-                })
+                });
             }
 
             this.setState({
                 client_dots: buffArr
-            })
-        })
+            });
+        });
     }
 
     onMouseDownHandler = (e) => {
@@ -105,6 +107,7 @@ class LeftPanel extends React.Component {
                     radius={this.state.radius}
                     clients={this.state.client_dots}
                 />
+                <Scale />
             </div>
         );
     }
