@@ -19,7 +19,7 @@ class RightPanel extends React.Component{
     distanceCalculator = () => {
         const K = -27.55;
         let FSPL = parseFloat(this.state.tx_power) + parseFloat(this.state.rc_power) - parseFloat(this.state.prx);
-        let distance = Math.pow(10, (FSPL - K - (20 * Math.log10(parseFloat(this.state.radio) * 1000)) ) / 20)
+        let distance = Math.pow(10, (FSPL - K - (20 * Math.log10(parseFloat(this.state.radio) * 1000)) ) / 20) * 2;
         this.props.distanceHandler(distance)
     }
 

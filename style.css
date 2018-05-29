@@ -23,7 +23,7 @@ html, body{
 }
 
 .scale{
-    width: 100px;
+    width: 200px;
     background: transparent;
     color: #999999;
     box-sizing: border-box;
@@ -40,7 +40,7 @@ html, body{
     border-left: 0.01em solid #999999;
     border-bottom: 0.01em solid #999999;
     border-right: 0.01em solid #999999;
-    width: 100px;
+    width: 200px;
     display: block;
 }
 

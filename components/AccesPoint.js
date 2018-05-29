@@ -21,7 +21,7 @@ class AccesPoint extends React.Component {
                         height: this.props.radius * 2
                     }}
                 />
-                <img 
+                <img
                     src="https://unifi-hd.ubnt.com/5b30823e7da7b814bb226a9fc0802a19.png"
                     className="accessPoint--element"
                     id="accessPoint"
